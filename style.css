@@ -9,7 +9,13 @@
 /* ===== BODY ===== */
 body {
     min-height: 100vh;
-    background: linear-gradient(135deg, #ff758c, #ff7eb3, #ffd1dc, #cdb4db);
+    background: linear-gradient(
+        135deg,
+        #ffb6c1,
+        #ffc0cb,
+        #ffd1dc,
+        #f3c6ff
+    );
     background-size: 400% 400%;
     animation: bgMove 14s ease infinite;
     overflow-x: hidden;
@@ -25,7 +31,7 @@ body {
 .overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.55);
+    background: rgba(0,0,0,0.45);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,13 +61,13 @@ body {
     font-size: 16px;
     border-radius: 40px;
     border: none;
-    background: #ff4b5c;
+    background: linear-gradient(135deg, #ff5f8a, #ff7eb3);
     color: #fff;
-    box-shadow: 0 12px 28px rgba(255,75,92,0.5);
+    box-shadow: 0 12px 28px rgba(255,95,138,0.45);
     cursor: pointer;
 }
 
-/* ===== FALLING CONTAINER ===== */
+/* ===== FALLING HEARTS & BALLOONS ===== */
 .hearts {
     position: absolute;
     inset: 0;
@@ -70,7 +76,6 @@ body {
     z-index: 1;
 }
 
-/* ===== PARTICLES ===== */
 .hearts span {
     position: absolute;
     top: -10%;
@@ -81,7 +86,6 @@ body {
     opacity: 0.85;
 }
 
-/* Spread from ALL SIDES */
 .hearts span:nth-child(1) { left: 5%;  animation-duration: 9s; }
 .hearts span:nth-child(2) { left: 15%; animation-duration: 12s; }
 .hearts span:nth-child(3) { left: 25%; animation-duration: 10s; }
@@ -106,7 +110,7 @@ body {
 .container {
     text-align: center;
     padding: 22px;
-    color: #2b2b2b;
+    color: #4a2a36;
     position: relative;
     z-index: 2;
 }
@@ -118,6 +122,7 @@ body {
 .container h1 {
     font-size: 28px;
     margin-bottom: 20px;
+    color: #6b2c47;
 }
 
 /* ===== PHOTO ===== */
@@ -126,19 +131,21 @@ body {
     height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid #fff;
+    border: 5px solid rgba(255,255,255,0.8);
     box-shadow: 0 18px 40px rgba(0,0,0,0.25);
     margin-bottom: 22px;
 }
 
-/* ===== MESSAGE ===== */
+/* ===== MESSAGE (NO WHITE) ===== */
 .message {
     font-size: 16px;
     line-height: 1.75;
-    background: rgba(255,255,255,0.88);
-    padding: 24px;
+    background: rgba(255, 230, 238, 0.88); /* pink glass */
+    backdrop-filter: blur(6px);
+    padding: 26px;
     border-radius: 22px;
-    box-shadow: 0 14px 35px rgba(0,0,0,0.15);
+    box-shadow: 0 16px 40px rgba(255, 140, 180, 0.35);
+    color: #4a2a36;
 }
 
 /* ===== FOOTER ===== */
@@ -146,6 +153,7 @@ body {
     margin-top: 22px;
     font-style: italic;
     font-size: 14px;
+    color: #6b2c47;
 }
 
 /* ===== DESKTOP ===== */
@@ -153,5 +161,9 @@ body {
     .intro h2 { font-size: 42px; }
     .container h1 { font-size: 40px; }
     .photo { width: 220px; height: 220px; }
-    .message { font-size: 18px; max-width: 650px; margin: auto; }
+    .message {
+        font-size: 18px;
+        max-width: 650px;
+        margin: auto;
+    }
 }
